@@ -1,0 +1,175 @@
+/* Root frame 414x1100 with style_0: background #252525, border-radius 30 */
+.home-root {
+  position: absolute;
+  left: 0; top: 0;
+  width: 414px;
+  height: 1100px;
+  background: var(--fig-color-252525);
+  border-radius: var(--radius-30);
+}
+
+/* Header: Title 'Notes' (style_5 + typo_14) at (1626,-776) relative to absolute artboard positioning.
+   We convert absolute artboard coordinates to local by subtracting frame origin (1602,-823) -> local (24,47) approx.
+   JSON frame origin is x=1602,y=-823; title at x=1626,y=-776 gives left=24, top=47.
+*/
+.home-title {
+  position: absolute;
+  left: 24px;
+  top: 47px;
+  margin: 0;
+  font-family: var(--font-primary);
+  font-weight: 600; /* typo_14 weight */
+  font-size: 43px;  /* typo_14 size */
+  line-height: 58.652px; /* exact per DS */
+  color: var(--fig-color-ffffff); /* typo_14 color */
+}
+
+/* Header action buttons: two dark rounded squares style_6 located at (1870,-772) and (1941,-772)
+   Local positions: (1870-1602=268, 51) and (339, 51)
+*/
+.home-actions .btn.action {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--fig-color-3b3b3b);
+  border-radius: var(--radius-15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.home-actions .btn.action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+.home-actions .btn.action:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Search button */
+.home-actions .btn.search { left: 268px; top: 51px; }
+.home-actions .btn.search img {
+  width: 24px; height: 24px;
+  filter: brightness(100%); /* ensure white icon visibility as style_5 was white fill in figma instance */
+}
+
+/* Info button */
+.home-actions .btn.info { left: 339px; top: 51px; }
+.home-actions .btn.info img {
+  width: 20px; height: 20px;
+}
+
+/* Cards: all 365xVary, left = 1626-1602=24px; use exact sizes and colors per style refs */
+.card {
+  position: absolute;
+  left: 24px;
+  border-radius: var(--radius-10);
+}
+.card.card-red {
+  top: 143px; /* -680 - (-823) = 143 */
+  width: 365px;
+  height: 157px;
+  background: var(--fig-color-ff9e9e);
+}
+.card.card-green {
+  top: 323px; /* -500 - (-823) = 323 */
+  width: 365px;
+  height: 123px;
+  background: var(--fig-color-91f48f);
+}
+.card.card-yellow {
+  top: 471px; /* -352 - (-823) = 471 */
+  width: 365px;
+  height: 110px;
+  background: var(--fig-color-fff599);
+}
+.card.card-cyan {
+  top: 606px; /* -217 - (-823) = 606 */
+  width: 365px;
+  height: 120px;
+  background: var(--fig-color-9effff);
+}
+.card.card-purple {
+  top: 751px; /* -72 - (-823) = 751 */
+  width: 365px;
+  height: 100px;
+  background: var(--fig-color-b69cff);
+}
+
+/* Card titles: typo_13 (Nunito 25/34.1, color black), positioned exactly from JSON */
+.card-title {
+  position: absolute;
+  margin: 0;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 34.1px;
+  color: var(--fig-color-000000);
+  width: auto;
+}
+.card-title-1 {
+  left: 69px; /* 1671-1602=69 */
+  top: 168px; /* -655 - (-823) = 168 */
+  width: 270px;
+  height: 103px;
+}
+.card-title-2 {
+  left: 69px;
+  top: 352px; /* -471 - (-823) = 352 */
+  width: 254px;
+  height: 64px;
+}
+.card-title-3 {
+  left: 69px;
+  top: 494px; /* -329 - (-823) = 494 */
+  width: 259px;
+  height: 67px;
+}
+.card-title-4 {
+  left: 69px;
+  top: 632px; /* -191 - (-823) = 632 */
+  width: 287px;
+  height: 68px;
+}
+.card-title-5 {
+  left: 69px;
+  top: 768px; /* -55 - (-823) = 768 */
+  width: 297px;
+  height: 66px;
+}
+
+/* FAB: Ellipse 1 at (x=1911,y=-46) -> local left=309, top=777; size 70x70, style_39 with two shadows and bg #252525, then add icon 28x28 centered; border-radius style_38/40 mentions 60, but ellipse is circular so 50% */
+.fab {
+  position: absolute;
+  left: 309px; /* 1911-1602 */
+  top: 777px;  /* -46 - (-823) */
+  width: 70px;
+  height: 70px;
+  background: var(--fig-color-252525);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* style_39 shadows: stack shadow_0 and shadow_1 */
+  box-shadow: var(--shadow-0), var(--shadow-1);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+.fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  background-color: #1f2937; /* slight lighter/darker hover aligned with Ocean professional depth */
+}
+.fab:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+.fab img { width: 28px; height: 28px; }
+
+/* Semantic wrappers positioned primarily for accessibility; the items themselves are absolutely positioned */
+.home-header, .notes-list { position: static; }
