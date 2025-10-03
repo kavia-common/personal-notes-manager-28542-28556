@@ -1,0 +1,48 @@
+<!-- Adapted from src/assets/home-screen-125-171.html -->
+<div class="scale-viewport">
+  <div class="scale-canvas" role="application" aria-label="Notes Home Screen">
+    <!-- Root frame background -->
+    <div class="home-root" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="home-header" aria-label="Header">
+      <h1 class="home-title">Notes</h1>
+      <nav class="home-actions" aria-label="Header actions">
+        <button class="btn action search" aria-label="Search" (click)="onSearchClick()">
+          <img src="/assets/figmaimages/figma_image_125_190_8_12.png" alt="" width="24" height="24">
+        </button>
+        <button class="btn action info" aria-label="Info" (click)="onInfoClick()">
+          <img src="/assets/figmaimages/figma_image_125_188_8_9.png" alt="" width="20" height="20">
+        </button>
+      </nav>
+    </header>
+
+    <!-- Cards/Notes list -->
+    <main class="notes-list" aria-label="Notes list">
+      <!-- Rectangle 8 (style_1) -->
+      <article class="card card-red" aria-label="Book Review : The Design of Everyday Things by Don Norman"></article>
+      <h2 class="card-title card-title-1">Book Review : The Design of Everyday Things by Don Norman</h2>
+
+      <!-- Rectangle 11 (style_3) -->
+      <article class="card card-green" aria-label="Animes produced by Ufotable"></article>
+      <h2 class="card-title card-title-2">Animes produced by Ufotable</h2>
+
+      <!-- Rectangle 10 (style_4) -->
+      <article class="card card-yellow" aria-label="Mangas planned to read"></article>
+      <h2 class="card-title card-title-3">Mangas planned to read</h2>
+
+      <!-- Rectangle 13 (style_7) -->
+      <article class="card card-cyan" aria-label="Awesome tweets collection"></article>
+      <h2 class="card-title card-title-4">Awesome tweets collection</h2>
+
+      <!-- Rectangle 9 (style_8) -->
+      <article class="card card-purple" aria-label="List of free &amp; open source apps"></article>
+      <h2 class="card-title card-title-5">List of free &amp; open source apps</h2>
+    </main>
+
+    <!-- FAB circle (Ellipse 1 with shadows) -->
+    <button class="fab" aria-label="Add note" (click)="onFabClick($event)">
+      <img src="/assets/figmaimages/figma_image_125_192_115_19.png" alt="" width="28" height="28">
+    </button>
+  </div>
+</div>
